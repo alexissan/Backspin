@@ -14,18 +14,25 @@ cp Resources/Info.plist Backspin.app/Contents/Info.plist
 cp Resources/AppIcon.icns Backspin.app/Contents/Resources/AppIcon.icns
 cp -R Resources/*.lproj Backspin.app/Contents/Resources/
 
-codesign --force --sign - Backspin.app
+# Sign with the local certificate from make-signing-cert.sh when there is one, so the Accessibility
+# permission survives rebuilds. Otherwise sign ad hoc. BACKSPIN_SIGN_IDENTITY overrides both.
+IDENTITY="${BACKSPIN_SIGN_IDENTITY:-}"
+if [ -z "$IDENTITY" ] && security find-certificate -c "Backspin Local Signing" >/dev/null 2>&1; then
+    IDENTITY="Backspin Local Signing"
+fi
+codesign --force --sign "${IDENTITY:--}" Backspin.app
 
 if [ "${1:-}" = "--no-install" ]; then
     exit 0
 fi
 
-cdhash() {
-    codesign -dvvv "$1" 2>&1 | sed -n 's/^CDHash=//p'
+# What macOS checks a saved permission against: the certificate for a signed build, the exact build for an ad hoc one.
+requirement() {
+    codesign -d -r- "$1" 2>&1 | sed -n 's/^.*designated => //p'
 }
-PREVIOUS_HASH=""
+PREVIOUS_REQUIREMENT=""
 if [ -d /Applications/Backspin.app ]; then
-    PREVIOUS_HASH="$(cdhash /Applications/Backspin.app)"
+    PREVIOUS_REQUIREMENT="$(requirement /Applications/Backspin.app)"
 fi
 
 pkill -x Backspin 2>/dev/null || true
@@ -37,10 +44,10 @@ done
 rm -rf /Applications/Backspin.app
 cp -R Backspin.app /Applications/Backspin.app
 
-# An ad hoc signature identifies one exact build. After a rebuild, the Accessibility permission granted
-# to the previous build no longer applies, yet System Settings would still show it switched on.
-# Clearing it makes macOS ask again instead of leaving a switch that does nothing.
-if [ -n "$PREVIOUS_HASH" ] && [ "$PREVIOUS_HASH" != "$(cdhash /Applications/Backspin.app)" ]; then
+# When the new build no longer satisfies what the old permission was saved against (always the case
+# between ad hoc builds), the Accessibility permission stops applying, yet System Settings would still
+# show it switched on. Clearing it makes macOS ask again instead of leaving a switch that does nothing.
+if [ -n "$PREVIOUS_REQUIREMENT" ] && [ "$PREVIOUS_REQUIREMENT" != "$(requirement /Applications/Backspin.app)" ]; then
     if tccutil reset Accessibility dev.alexissantos.backspin >/dev/null 2>&1; then
         echo "Backspin was rebuilt, so its Accessibility permission was cleared. Choose Allow Pasting in the panel to grant it again."
     fi

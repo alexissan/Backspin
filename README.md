@@ -38,7 +38,7 @@ cd Backspin
 ./build.sh
 ```
 
-`build.sh` builds a release binary, wraps it in `Backspin.app`, signs it ad hoc, installs it in `/Applications` (quitting and replacing any earlier copy), and launches it. Pass `--no-install` to only build the bundle next to the script.
+`build.sh` builds a release binary, wraps it in `Backspin.app`, signs it (ad hoc, unless you have made a local certificate), installs it in `/Applications` (quitting and replacing any earlier copy), and launches it. Pass `--no-install` to only build the bundle next to the script.
 
 Backspin lives in the menu bar and has no Dock icon. Copy something, then press `⇧⌘V`.
 
@@ -49,6 +49,16 @@ To have it start with your Mac, turn on **Launch at login** in Settings, or from
 ```
 
 Pasting needs Accessibility permission, which Backspin uses only to press ⌘V for you. Without it, Return copies the clip and you paste it yourself. Allow it from the panel footer or from **Settings**.
+
+### Keeping the permission across rebuilds
+
+If you plan to rebuild, run this once before `./build.sh`:
+
+```sh
+./make-signing-cert.sh
+```
+
+It creates a self-signed certificate called "Backspin Local Signing" in your login keychain, and `build.sh` signs with it from then on. The Accessibility permission then follows the certificate instead of one exact build, so you grant it once. The first build may ask whether `codesign` can use the key: choose **Always Allow**. To undo it, delete the certificate in Keychain Access.
 
 Want a look first? Demo mode shows made-up clips and neither reads nor saves your real clipboard history. Quit Backspin if it is running, then:
 
@@ -137,7 +147,7 @@ Backspin has no network code, no accounts and no analytics. Your history lives i
 
 **Return only copies.** Backspin needs Accessibility permission to paste. Turn it on under **System Settings → Privacy & Security → Accessibility**, or use **Allow…** in Settings.
 
-**macOS asks for Accessibility permission again after a rebuild.** The app is ad-hoc signed, so the permission belongs to one exact build. When `build.sh` installs a build that differs from the one already in `/Applications`, it clears the old permission so macOS asks again. Choose **Allow Pasting…** in the panel and switch Backspin on.
+**macOS asks for Accessibility permission again after a rebuild.** By default the app is ad-hoc signed, so the permission belongs to one exact build. When `build.sh` installs a build the old permission no longer covers, it clears it so macOS asks again. Choose **Allow Pasting…** in the panel and switch Backspin on. To stop this happening, run `./make-signing-cert.sh` once (see [Keeping the permission across rebuilds](#keeping-the-permission-across-rebuilds)).
 
 **Backspin is switched on in the Accessibility list, but Return still only copies.** The switch belongs to an earlier build. Clear it, then allow pasting again:
 
@@ -168,10 +178,11 @@ swift build && .build/debug/Backspin --screenshots docs
 | `Resources` | `Info.plist`, the app icon, and the English and Spanish strings |
 | `build.sh` | Builds, signs and installs the app |
 | `make-icon.sh` | Redraws the app icon |
+| `make-signing-cert.sh` | Creates the optional local signing certificate |
 
 ## Known limits
 
-- No prebuilt download yet: the app is ad-hoc signed, so you build it yourself.
+- No prebuilt download yet: the app is signed ad hoc or with your own local certificate, so you build it yourself.
 - Text over 2 MB and images over 25 MB are skipped.
 
 ## Licence
