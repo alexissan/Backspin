@@ -73,13 +73,23 @@ struct SettingsView: View {
                 Text("Pinned clips never count towards the limit. Everything stays on this Mac, and anything a password manager marks as private is never saved.")
             }
 
-            Section("General") {
+            Section {
                 Toggle("Launch at login", isOn: $launchAtLogin)
                     .onChange(of: launchAtLogin) { _, enabled in
                         if !LaunchAtLogin.setEnabled(enabled) {
                             launchAtLogin = LaunchAtLogin.isEnabled
                         }
                     }
+                Toggle("Show in menu bar", isOn: $settings.showsMenuBarIcon)
+                LabeledContent {
+                    Button("Quit Backspin") { NSApp.terminate(nil) }
+                } label: {
+                    EmptyView()
+                }
+            } header: {
+                Text("General")
+            } footer: {
+                Text("With the icon hidden, your shortcut still opens Backspin. Open the app again from Applications or Spotlight to come back to these settings.")
             }
         }
         .formStyle(.grouped)

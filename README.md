@@ -119,6 +119,7 @@ Open them from the gear in the panel, the menu bar item, or `⌘,`.
 | Pause recording | Stop saving what you copy |
 | Clear History | Removes everything except pinned clips, after a confirmation |
 | Launch at login | Start Backspin when you log in |
+| Show in menu bar | Hide the menu bar icon when space is tight. The shortcut still works, and opening the app again brings back Settings |
 
 <p align="center">
   <img src="docs/settings.png" width="480" alt="Backspin settings window">

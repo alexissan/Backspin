@@ -71,12 +71,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         installStatusItem()
         observePause()
+        observeMenuBarIcon()
 
         let firstLaunchKey = "hasLaunchedBefore"
         if demo || !UserDefaults.standard.bool(forKey: firstLaunchKey) {
             UserDefaults.standard.set(true, forKey: firstLaunchKey)
             panelController.show()
         }
+    }
+
+    /// Opening the app again (Finder, Spotlight) is the way back to Settings when the menu bar icon is hidden.
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
+        openSettings()
+        return false
     }
 
     func applicationWillTerminate(_ notification: Notification) {
@@ -128,6 +135,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         statusItem.button?.toolTip = store.isPaused
             ? String(localized: "Backspin is paused")
             : String(localized: "Backspin is saving what you copy")
+    }
+
+    private func observeMenuBarIcon() {
+        withObservationTracking {
+            statusItem.isVisible = settings.showsMenuBarIcon
+        } onChange: { [weak self] in
+            Task { @MainActor in self?.observeMenuBarIcon() }
+        }
     }
 
     private func observePause() {

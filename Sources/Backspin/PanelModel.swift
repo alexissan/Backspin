@@ -12,6 +12,13 @@ final class AppSettings {
         didSet { defaults.set(theme.rawValue, forKey: Theme.storageKey) }
     }
 
+    /// Off hides the menu bar icon; the shortcut still opens the panel.
+    var showsMenuBarIcon: Bool {
+        didSet { defaults.set(showsMenuBarIcon, forKey: Self.menuBarIconKey) }
+    }
+
+    static let menuBarIconKey = "showsMenuBarIcon"
+
     var hotKey: KeyCombo {
         didSet {
             if let data = try? JSONEncoder().encode(hotKey) {
@@ -23,6 +30,7 @@ final class AppSettings {
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
         theme = Theme(storedValue: defaults.string(forKey: Theme.storageKey))
+        showsMenuBarIcon = defaults.object(forKey: Self.menuBarIconKey) as? Bool ?? true
         hotKey = defaults.data(forKey: KeyCombo.storageKey)
             .flatMap { try? JSONDecoder().decode(KeyCombo.self, from: $0) } ?? .standard
     }

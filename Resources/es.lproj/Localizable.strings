@@ -110,3 +110,5 @@
 "Clear History" = "Borrar historial";
 "Cancel" = "Cancelar";
 "Pinned clips are kept. This can't be undone." = "Los elementos fijados se conservan. Esta acción no se puede deshacer.";
+"Show in menu bar" = "Mostrar en la barra de menús";
+"With the icon hidden, your shortcut still opens Backspin. Open the app again from Applications or Spotlight to come back to these settings." = "Con el icono oculto, el atajo sigue abriendo Backspin. Vuelve a abrir la app desde Aplicaciones o Spotlight para regresar a estos ajustes.";
