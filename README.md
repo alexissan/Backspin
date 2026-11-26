@@ -137,7 +137,9 @@ Backspin has no network code, no accounts and no analytics. Your history lives i
 
 **Return only copies.** Backspin needs Accessibility permission to paste. Turn it on under **System Settings → Privacy & Security → Accessibility**, or use **Allow…** in Settings.
 
-**macOS asks for Accessibility permission again after a rebuild.** The app is ad-hoc signed, so every build has a new signature. Allow it again. If the prompt never comes back, reset the permission and relaunch:
+**macOS asks for Accessibility permission again after a rebuild.** The app is ad-hoc signed, so the permission belongs to one exact build. When `build.sh` installs a build that differs from the one already in `/Applications`, it clears the old permission so macOS asks again. Choose **Allow Pasting…** in the panel and switch Backspin on.
+
+**Backspin is switched on in the Accessibility list, but Return still only copies.** The switch belongs to an earlier build. Clear it, then allow pasting again:
 
 ```sh
 tccutil reset Accessibility dev.alexissantos.backspin
