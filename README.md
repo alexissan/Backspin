@@ -42,6 +42,12 @@ cd Backspin
 
 Backspin lives in the menu bar and has no Dock icon. Copy something, then press `⇧⌘V`.
 
+To have it start with your Mac, turn on **Launch at login** in Settings, or from a terminal:
+
+```sh
+/Applications/Backspin.app/Contents/MacOS/Backspin --launch-at-login on
+```
+
 Pasting needs Accessibility permission, which Backspin uses only to press ⌘V for you. Without it, Return copies the clip and you paste it yourself. Allow it from the panel footer or from **Settings**.
 
 Want a look first? Demo mode shows made-up clips and neither reads nor saves your real clipboard history. Quit Backspin if it is running, then:

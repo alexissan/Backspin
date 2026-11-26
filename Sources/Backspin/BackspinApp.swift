@@ -15,6 +15,13 @@ enum BackspinMain {
         }
 
         let app = NSApplication.shared
+        // `--launch-at-login on|off` flips the login item from a script, then exits.
+        if let index = arguments.firstIndex(of: "--launch-at-login"), arguments.indices.contains(index + 1) {
+            let succeeded = LaunchAtLogin.setEnabled(arguments[index + 1] == "on")
+            print(LaunchAtLogin.isEnabled ? "Launch at login is on" : "Launch at login is off")
+            exit(succeeded ? 0 : 1)
+        }
+
         // `--store <folder>` keeps history somewhere else, for trying things without touching the real one.
         let storeDirectory = arguments.firstIndex(of: "--store")
             .flatMap { arguments.indices.contains($0 + 1) ? arguments[$0 + 1] : nil }
