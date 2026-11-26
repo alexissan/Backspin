@@ -1,0 +1,112 @@
+/* Panel */
+"Backspin clipboard history" = "Historial del portapapeles de Backspin";
+"Search your clipboard" = "Buscar en el portapapeles";
+"Recording" = "Grabando";
+"Paused" = "En pausa";
+"On" = "Activada";
+"Clipboard recording" = "Grabación del portapapeles";
+"Pause saving what you copy" = "Pausar el guardado de lo que copias";
+"Resume saving what you copy" = "Reanudar el guardado de lo que copias";
+"Pauses or resumes saving what you copy" = "Pausa o reanuda el guardado de lo que copias";
+"Filter by kind" = "Filtrar por tipo";
+"Press Tab to switch between kinds" = "Pulsa Tab para cambiar de tipo";
+"No matches" = "Sin resultados";
+"Nothing copied yet" = "Aún no has copiado nada";
+"Pastes into the app you were using" = "Pega en la app que estabas usando";
+"Copies to the clipboard" = "Copia al portapapeles";
+"Allow Pasting…" = "Permitir pegar…";
+"Backspin needs Accessibility permission to paste for you. Until then, Return copies." = "Backspin necesita permiso de Accesibilidad para pegar por ti. Hasta entonces, Retorno copia.";
+"Settings" = "Ajustes";
+"Plain" = "Sin formato";
+
+/* Actions */
+"Paste" = "Pegar";
+"Paste as Plain Text" = "Pegar como texto sin formato";
+"Copy" = "Copiar";
+"Pin" = "Fijar";
+"Unpin" = "Dejar de fijar";
+"Delete" = "Eliminar";
+
+/* Kinds and filters */
+"All" = "Todo";
+"Text" = "Texto";
+"Link" = "Enlace";
+"Color" = "Color";
+"Image" = "Imagen";
+"File" = "Archivo";
+"Links" = "Enlaces";
+"Colors" = "Colores";
+"Images" = "Imágenes";
+"Files" = "Archivos";
+"%lld clips" = "%lld elementos";
+
+/* Sections */
+"Pinned" = "Fijados";
+"Today" = "Hoy";
+"Yesterday" = "Ayer";
+"This Week" = "Esta semana";
+"This Month" = "Este mes";
+"Older" = "Anteriores";
+
+/* Detail */
+"Copy something to get started" = "Copia algo para empezar";
+"Everything you copy lands here. Spin back to it any time with" = "Todo lo que copies aparecerá aquí. Vuelve a ello cuando quieras con";
+"Image preview" = "Vista previa de la imagen";
+"Open Link" = "Abrir enlace";
+"Color swatch, %@" = "Muestra de color, %@";
+"Source" = "Origen";
+"Unknown" = "Desconocido";
+"Content" = "Contenido";
+"Code" = "Código";
+"%lld characters" = "%lld caracteres";
+"%lld words" = "%lld palabras";
+"%lld lines" = "%lld líneas";
+"%lld files" = "%lld archivos";
+"HEX" = "HEX";
+"RGB" = "RGB";
+"HSL" = "HSL";
+"Copied" = "Copiado";
+"Times copied" = "Veces copiado";
+"Pinned clip" = "Fijado";
+"from %@" = "de %@";
+
+/* Menu bar */
+"Open Backspin" = "Abrir Backspin";
+"Shortcut" = "Atajo";
+"Pause Recording" = "Pausar grabación";
+"Settings…" = "Ajustes…";
+"Quit Backspin" = "Salir de Backspin";
+"Backspin is paused" = "Backspin está en pausa";
+"Backspin is saving what you copy" = "Backspin está guardando lo que copias";
+"Backspin Settings" = "Ajustes de Backspin";
+
+/* Settings */
+"Appearance" = "Aspecto";
+"Theme" = "Tema";
+"Classic" = "Clásico";
+"Retro" = "Retro";
+"Follows light and dark" = "Sigue el modo claro y oscuro";
+"Neon grid, striped sun" = "Rejilla de neón, sol a rayas";
+"Click the shortcut, then press the keys you want. It needs ⌘, ⌃ or ⌥." = "Haz clic en el atajo y pulsa las teclas que quieras. Necesita ⌘, ⌃ o ⌥.";
+"Type shortcut…" = "Escribe el atajo…";
+"Press to record a new shortcut. Escape cancels." = "Pulsa para grabar un atajo nuevo. Escape cancela.";
+"Reset" = "Restablecer";
+"Add ⌘, ⌃ or ⌥" = "Añade ⌘, ⌃ o ⌥";
+"That shortcut is taken" = "Ese atajo ya está en uso";
+"Pasting" = "Pegado";
+"Backspin can paste for you" = "Backspin puede pegar por ti";
+"Return only copies for now" = "Por ahora, Retorno solo copia";
+"Allow…" = "Permitir…";
+"To paste straight into the app you were using, Backspin needs Accessibility permission. It is only used to press ⌘V." = "Para pegar directamente en la app que estabas usando, Backspin necesita permiso de Accesibilidad. Solo se usa para pulsar ⌘V.";
+"History" = "Historial";
+"Keep" = "Conservar";
+"Pause recording" = "Pausar grabación";
+"%lld clips saved" = "%lld elementos guardados";
+"Clear History…" = "Borrar historial…";
+"Pinned clips never count towards the limit. Everything stays on this Mac, and anything a password manager marks as private is never saved." = "Los elementos fijados no cuentan para el límite. Todo se queda en este Mac y nunca se guarda nada que un gestor de contraseñas marque como privado.";
+"General" = "General";
+"Launch at login" = "Abrir al iniciar sesión";
+"Clear your clipboard history?" = "¿Borrar el historial del portapapeles?";
+"Clear History" = "Borrar historial";
+"Cancel" = "Cancelar";
+"Pinned clips are kept. This can't be undone." = "Los elementos fijados se conservan. Esta acción no se puede deshacer.";

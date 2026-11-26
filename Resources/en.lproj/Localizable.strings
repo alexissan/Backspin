@@ -1,0 +1,112 @@
+/* Panel */
+"Backspin clipboard history" = "Backspin clipboard history";
+"Search your clipboard" = "Search your clipboard";
+"Recording" = "Recording";
+"Paused" = "Paused";
+"On" = "On";
+"Clipboard recording" = "Clipboard recording";
+"Pause saving what you copy" = "Pause saving what you copy";
+"Resume saving what you copy" = "Resume saving what you copy";
+"Pauses or resumes saving what you copy" = "Pauses or resumes saving what you copy";
+"Filter by kind" = "Filter by kind";
+"Press Tab to switch between kinds" = "Press Tab to switch between kinds";
+"No matches" = "No matches";
+"Nothing copied yet" = "Nothing copied yet";
+"Pastes into the app you were using" = "Pastes into the app you were using";
+"Copies to the clipboard" = "Copies to the clipboard";
+"Allow Pasting…" = "Allow Pasting…";
+"Backspin needs Accessibility permission to paste for you. Until then, Return copies." = "Backspin needs Accessibility permission to paste for you. Until then, Return copies.";
+"Settings" = "Settings";
+"Plain" = "Plain";
+
+/* Actions */
+"Paste" = "Paste";
+"Paste as Plain Text" = "Paste as Plain Text";
+"Copy" = "Copy";
+"Pin" = "Pin";
+"Unpin" = "Unpin";
+"Delete" = "Delete";
+
+/* Kinds and filters */
+"All" = "All";
+"Text" = "Text";
+"Link" = "Link";
+"Color" = "Color";
+"Image" = "Image";
+"File" = "File";
+"Links" = "Links";
+"Colors" = "Colors";
+"Images" = "Images";
+"Files" = "Files";
+"%lld clips" = "%lld clips";
+
+/* Sections */
+"Pinned" = "Pinned";
+"Today" = "Today";
+"Yesterday" = "Yesterday";
+"This Week" = "This Week";
+"This Month" = "This Month";
+"Older" = "Older";
+
+/* Detail */
+"Copy something to get started" = "Copy something to get started";
+"Everything you copy lands here. Spin back to it any time with" = "Everything you copy lands here. Spin back to it any time with";
+"Image preview" = "Image preview";
+"Open Link" = "Open Link";
+"Color swatch, %@" = "Color swatch, %@";
+"Source" = "Source";
+"Unknown" = "Unknown";
+"Content" = "Content";
+"Code" = "Code";
+"%lld characters" = "%lld characters";
+"%lld words" = "%lld words";
+"%lld lines" = "%lld lines";
+"%lld files" = "%lld files";
+"HEX" = "HEX";
+"RGB" = "RGB";
+"HSL" = "HSL";
+"Copied" = "Copied";
+"Times copied" = "Times copied";
+"Pinned clip" = "Pinned";
+"from %@" = "from %@";
+
+/* Menu bar */
+"Open Backspin" = "Open Backspin";
+"Shortcut" = "Shortcut";
+"Pause Recording" = "Pause Recording";
+"Settings…" = "Settings…";
+"Quit Backspin" = "Quit Backspin";
+"Backspin is paused" = "Backspin is paused";
+"Backspin is saving what you copy" = "Backspin is saving what you copy";
+"Backspin Settings" = "Backspin Settings";
+
+/* Settings */
+"Appearance" = "Appearance";
+"Theme" = "Theme";
+"Classic" = "Classic";
+"Retro" = "Retro";
+"Follows light and dark" = "Follows light and dark";
+"Neon grid, striped sun" = "Neon grid, striped sun";
+"Click the shortcut, then press the keys you want. It needs ⌘, ⌃ or ⌥." = "Click the shortcut, then press the keys you want. It needs ⌘, ⌃ or ⌥.";
+"Type shortcut…" = "Type shortcut…";
+"Press to record a new shortcut. Escape cancels." = "Press to record a new shortcut. Escape cancels.";
+"Reset" = "Reset";
+"Add ⌘, ⌃ or ⌥" = "Add ⌘, ⌃ or ⌥";
+"That shortcut is taken" = "That shortcut is taken";
+"Pasting" = "Pasting";
+"Backspin can paste for you" = "Backspin can paste for you";
+"Return only copies for now" = "Return only copies for now";
+"Allow…" = "Allow…";
+"To paste straight into the app you were using, Backspin needs Accessibility permission. It is only used to press ⌘V." = "To paste straight into the app you were using, Backspin needs Accessibility permission. It is only used to press ⌘V.";
+"History" = "History";
+"Keep" = "Keep";
+"Pause recording" = "Pause recording";
+"%lld clips saved" = "%lld clips saved";
+"Clear History…" = "Clear History…";
+"Pinned clips never count towards the limit. Everything stays on this Mac, and anything a password manager marks as private is never saved." = "Pinned clips never count towards the limit. Everything stays on this Mac, and anything a password manager marks as private is never saved.";
+"General" = "General";
+"Launch at login" = "Launch at login";
+"Clear your clipboard history?" = "Clear your clipboard history?";
+"Clear History" = "Clear History";
+"Cancel" = "Cancel";
+"Pinned clips are kept. This can't be undone." = "Pinned clips are kept. This can't be undone.";
